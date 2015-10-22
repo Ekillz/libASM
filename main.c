@@ -3,17 +3,12 @@
 #include <stdio.h>
 
 void ft_bzero(void *s, size_t n);
+char *ft_strcat(char *s1, const char *s2);
+int	  ft_isalpha(int c);
+int   ft_isdigit(int c);
+int   ft_isalnum(int c);
+
 int main(void)
 {
-
-	char *s;
-
-	s = malloc(sizeof(char) * 5);
-	s[0] = 'd';
-	s[1] = 'u';
-	s[2] = 'd';
-	s[3] = 'e';
-	s[4] = '\0';
-	ft_bzero((void *)s, 4);
-	printf("%s", s);
+	printf("%d\n", ft_isalnum(10));
 }
