@@ -8,6 +8,8 @@ ft_puts:
 	mov r10, rdi
 
 check_null:
+	cmp r8, 0
+	je new_line
 	cmp byte [r8], 0
 	je new_line
 
