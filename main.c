@@ -7,8 +7,10 @@ char *ft_strcat(char *s1, const char *s2);
 int	  ft_isalpha(int c);
 int   ft_isdigit(int c);
 int   ft_isalnum(int c);
-
+int   ft_toupper(int c);
+int   ft_tolower(int c);
+int   ft_puts(const char *s);
 int main(void)
 {
-	printf("%d\n", ft_isalnum(10));
+	ft_puts("dude");
 }

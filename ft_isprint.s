@@ -1,9 +1,9 @@
-gloabl ft_isascii
+global ft_isprint
 
 section .text
 
-ft_isascii:
-	cmp rdi, 0
+ft_isprint:
+	cmp rdi, 32
 	jae second_check
 	jmp ret0
 
@@ -17,4 +17,4 @@ ret0:
 
 ret1:
 	mov rax, 1
-	ret
+	ret	
