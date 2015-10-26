@@ -3,11 +3,18 @@ global ft_strlen
 section .text
 
 ft_strlen:
-	rep scasb
-	mov rax, 0x2000004
-	mov r8, rdi
-	mov rdi, 1
-	mov rsi, r8
-	mov rdx, 1
-	syscall
+	cmp rdi, 0
+	je null
+	mov rcx, 0
+	not rcx
+	mov al, 0
+	cld
+	repne scasb
+	not rcx
+	dec rcx
+	mov rax, rcx
+	ret
+
+null:
+	mov rax, 0
 	ret
