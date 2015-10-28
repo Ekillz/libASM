@@ -8,24 +8,21 @@ extern malloc
 ft_strdup:
 	cmp rdi, 0
 	je null
-	mov r10, rdi
+	push rdi
 
 	call ft_strlen
-	imul rax, 6
-	mov r9, rax
+	inc rax
+	push rax
 
-	mov rdi, r9
-	mov rdi, 18
-	push 18
+	mov rdi, rax
 	call malloc
 	cmp rax, 00
 	je null
-	mov rcx, 1
+	
+	pop rcx
+	pop rsi
 	mov rdi, rax
-	mov rsi, r10
-	cld
 	rep movsb
-	mov byte [rdi], 0
 	ret
 null:
 	mov rax, 00
