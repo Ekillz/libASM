@@ -1,4 +1,4 @@
-gloabl ft_isascii
+global ft_isascii
 
 section .text
 
