@@ -216,7 +216,6 @@ static int      test_strcat()
 				dest, ret, strcmp(ret, dest));
 		return (0);
 	}
-
 	bzero(dest, 20);
 	bzero(ctrl, 20);
 	strcpy(dest, "toto");
@@ -279,7 +278,17 @@ static int      test_cat()
 	return 1;
 }
 
+static int		test_putstr()
+{
+	ft_putstr("\033[32;01mOK\033[0m\n");
+	return (1);
+}
 
+static int		test_putstr_fd()
+{
+	ft_putstr_fd("\033[32;01mOK\033[0m\n", 1);
+	return (1);
+}
 
 int             main(void)
 {
@@ -327,6 +336,22 @@ int             main(void)
 
 	putstr("-ft_cat:...\t\t");
 	test_cat();
+
+	putstr("\nBonus:\n");
+	putstr("-ft_islower...\t\t");
+	test_is(ft_islower, islower);
+
+	putstr("-ft_isupper:...\t\t");
+	test_is(ft_isupper, isupper);
+
+	putstr("-ft_isblank:...\t\t");
+	test_is(ft_isblank, isblank);
+
+	putstr("-ft_putstr:...\t\t");
+	test_putstr();
+
+	putstr("-ft_putstr_fd:...\t");
+	test_putstr_fd();
 
 	return 0;
 }

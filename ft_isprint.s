@@ -8,7 +8,7 @@ ft_isprint:
 	jmp ret0
 
 second_check:
-	cmp rdi, 127
+	cmp rdi, 126
 	jbe ret1
 
 ret0:
